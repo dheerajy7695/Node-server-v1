@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    res.send('Welcome to Dheeraj Digital Ready');
+    res.send('Welcome to Dheeraj Digital Ready 1.0');
 });
 
 app.listen(port, () => {
