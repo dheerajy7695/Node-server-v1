@@ -1,0 +1,36 @@
+{
+  "name": "node-server-v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@hapi/joi-date": "^2.0.1",
+    "app-root-path": "^3.1.0",
+    "async": "^3.2.0",
+    "async-waterfall": "^0.1.5",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "date-and-time": "^2.4.1",
+    "dateformat": "^5.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.21.1",
+    "fast-safe-stringify": "^2.1.1",
+    "joi": "^17.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.6.2",
+    "path": "^0.12.7",
+    "underscore": "^1.13.6",
+    "uuid": "^9.0.0",
+    "winston": "^3.8.2"
+  }
+}
