@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const logger = require('../../core/utils/logger');
 
-// const dbUrl = require('./dbSource');
+const dbUrl = require('./dbSource');
 
-const dbUrl = { dbUrl: "mongodb://localhost:27017/localDB" };
+// const dbUrl = { dbUrl: "mongodb://localhost:27017/localDB" };
 
 module.exports.dbConnection = () => {
-    mongoose.connect(dbUrl.dbUrl, {})
+    mongoose.connect(dbUrl.newDbUrl, {})
         .then(() => {
             logger.info('Database connected successfully');
             return 'Connection established successfully';

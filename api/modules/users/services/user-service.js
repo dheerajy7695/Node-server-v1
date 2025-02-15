@@ -43,7 +43,7 @@ module.exports.update = async (params, reqPayload, cb) => {
     let dbQuery = { _id: params.id || params._id };
 
     try {
-        if (reqPayload.password) cb({ status: 400, message: 'Ypu can not update the password using this endpoint' });
+        if (reqPayload.password) cb({ status: 400, message: 'You can not update the password using this endpoint' });
 
         const userExist = await UserModel.findById(dbQuery);
         if (!userExist) {
@@ -83,7 +83,7 @@ module.exports.deleteUser = async (params, cb) => {
 
 module.exports.getUsers = async (params, cb) => {
     try {
-        const userData = await UserModel.find().sort({ created: -1 });
+        const userData = await UserModel.find({}, { password: 0 }).sort({ createdAt: -1 });
 
         if (userData) {
             logger.info('getUsers function has executed successfully');

@@ -37,7 +37,7 @@ app.use('/api', projectRoutes);
 app.use('/api', itemRoutes);
 
 app.all('*', (req, res) => {
-    res.status(404).json(`Cannot find ${req.originalUrl} on server`);
+    res.status(404).json(`Cannot find ${req.originalUrl} on server, please check ur url request`);
 });
 
 process
