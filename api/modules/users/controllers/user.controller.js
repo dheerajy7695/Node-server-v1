@@ -56,4 +56,8 @@ const getUsers = (req, res) => {
     });
 };
 
-module.exports = { create, update, deleteUser, getUsers };
+const testFunction = (req, res) => {
+    res.status(200).json({ status: 200, message: 'This is coming form user controller' });
+}
+
+module.exports = { create, update, deleteUser, getUsers, testFunction };
