@@ -12,4 +12,7 @@ router.delete('/delete/:id', isUserAuthenticated, userController.deleteUser);
 
 router.get('/get', isUserAuthenticated, userController.getUsers);
 
+router.get('/get-test', userController.testFunction);
+
+
 module.exports = router;
