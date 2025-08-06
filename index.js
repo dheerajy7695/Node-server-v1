@@ -1,17 +1,17 @@
 'use strict';
+const dotenv = require('dotenv');
+dotenv.config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const dotenv = require('dotenv');
 
-const dbConnect = require('./api/core/config/dbConnection');
-const authRoutes = require('./api/modules/users/routes/auth-routes');
-const userRoutes = require('./api/modules/users/routes/user.routes');
-const projectRoutes = require('./api/modules/projects/routes/project.route');
-const itemRoutes = require('./api/modules/items/routes/item.route');
-const logger = require('./api/core/utils/logger');
-dotenv.config();
+const dbConnect = require('./src/core/config/dbConnection');
+const authRoutes = require('./src/modules/users/routes/auth-routes');
+const userRoutes = require('./src/modules/users/routes/user.routes');
+const projectRoutes = require('./src/modules/projects/routes/project.route');
+const itemRoutes = require('./src/modules/items/routes/item.route');
+const logger = require('./src/core/utils/logger');
 
 const app = express();
 
