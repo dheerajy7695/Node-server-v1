@@ -11,6 +11,7 @@ const authRoutes = require('./src/modules/users/routes/auth-routes');
 const userRoutes = require('./src/modules/users/routes/user.routes');
 const projectRoutes = require('./src/modules/projects/routes/project.route');
 const itemRoutes = require('./src/modules/items/routes/item.route');
+const doctorRoutes = require('./src/modules/doctors/routes/doctor.routes');
 const logger = require('./src/core/utils/logger');
 
 const app = express();
@@ -18,8 +19,8 @@ const app = express();
 const port = process.env.SERVER_PORT;
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 app.get('/', (req, res) => {
     res.send('Welcome to Dheeraj Digital Ready 1.0 - Prod');
@@ -32,9 +33,10 @@ app.listen(port, () => {
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/doctors', doctorRoutes);
 
-app.use('/api', projectRoutes);
-app.use('/api', itemRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/items', itemRoutes);
 
 app.all('*', (req, res) => {
     res.status(404).json(`Cannot find ${req.originalUrl} on server, please check ur url request`);
